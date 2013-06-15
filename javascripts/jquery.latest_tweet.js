@@ -30,12 +30,25 @@
               _this.tweet_permlink = $($("#twitter-widget-0").contents().find(".h-feed li")[0]).find(".permalink").attr("href")
               _this.tweet = $($("#twitter-widget-0").contents().find(".h-feed li")[0]).find(".e-entry-title").html()
               
-              _this.printTweet();
+              if (typeof moment !== "undefined") {
+                _this.tweet_date = moment($(_this.tweet_date).attr("datetime"), "YYYYMMDD").fromNow()
+              }
+              
+              if (_this.options.callback) {
+                var data = {
+                  tweet_date: _this.tweet_date,
+                  tweet_permlink: _this.tweet_permlink,
+                  tweet: _this.tweet
+                }
+                _this.options.callback(data);
+              } else {
+                _this.printTweet();
+              }
             }
           });
         },
         printTweet: function() {
-          $(this.element).html(this.tweet);
+          $(this.element).html(this.tweet + '<div class="twitter_widget_posted"><a href="' + this.tweet_permalink + '">' + this.tweet_date + '</a></div>');
         },
         createWidgetAndPrintToDom: function() {
           var tw = '<div style="display: none;"><a class="twitter-timeline" href="https://twitter.com/iamjpg" data-widget-id="' + this.options.widget_id + '">Tweets by @iamjpg</a>';
