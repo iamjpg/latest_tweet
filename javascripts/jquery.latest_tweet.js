@@ -34,7 +34,7 @@
                 _this.tweet_date = moment($(_this.tweet_date).attr("datetime"), "YYYYMMDD").fromNow()
               }
               
-              if (_this.options.callback) {
+              if (_this.options.callback && typeof _this.options.callback === "function") {
                 var data = {
                   tweet_date: _this.tweet_date,
                   tweet_permlink: _this.tweet_permlink,
@@ -48,7 +48,7 @@
           });
         },
         printTweet: function() {
-          $(this.element).html(this.tweet + '<div class="twitter_widget_posted"><a href="' + this.tweet_permalink + '">' + this.tweet_date + '</a></div>');
+          $(this.element).html('<div class="twitter_widget_tweet">' + this.tweet + '</div><div class="twitter_widget_posted"><a href="' + this.tweet_permalink + '">' + this.tweet_date + '</a></div>');
         },
         createWidgetAndPrintToDom: function() {
           var tw = '<div style="display: none;"><a class="twitter-timeline" href="https://twitter.com/iamjpg" data-widget-id="' + this.options.widget_id + '">Tweets by @iamjpg</a>';

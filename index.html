@@ -12,7 +12,10 @@
   <script src="javascripts/jquery.latest_tweet.js" type="text/javascript" charset="utf-8"></script>
   <script>
   $("#latest_tweet").latestTweet({
-    widget_id: "345612825047228417"
+    widget_id: "345612825047228417",
+    callback: function(data) {
+      console.log(data);
+    }
   });
   </script>
 </body>
