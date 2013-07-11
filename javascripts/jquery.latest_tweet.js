@@ -46,7 +46,7 @@
           });
         },
         printTweet: function() {
-          $(this.element).html('<div class="twitter_widget_tweet">' + this.tweet + '</div><div class="twitter_widget_posted"><a href="' + this.tweet_permalink + '">' + this.tweet_date + '</a></div>');
+          $(this.element).html('<div class="twitter_widget_tweet">' + this.tweet + '</div><div class="twitter_widget_posted"><a href="' + this.tweet_permlink + '">' + this.tweet_date + '</a></div>');
         },
         createWidgetAndPrintToDom: function() {
           var tw = '<div style="display: none;"><a class="twitter-timeline" href="https://twitter.com/iamjpg" data-widget-id="' + this.options.widget_id + '">Tweets by @iamjpg</a>';
