@@ -1,7 +1,7 @@
 (function ( $ ) {
     var pluginName = "latestTweet",
         defaults = {
-            propertyName: "value"
+            
         };
 
     function Plugin( element, options ) {
@@ -43,7 +43,7 @@
                 _this.printTweet();
               }
             }
-          });
+          }, 5);
         },
         printTweet: function() {
           $(this.element).html('<div class="twitter_widget_tweet">' + this.tweet + '</div><div class="twitter_widget_posted"><a href="' + this.tweet_permlink + '">' + this.tweet_date + '</a></div>');
