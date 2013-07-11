@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+  <style>
+  body {
+    font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+    padding: 50px;
+  }
+  </style>
 </head>
 <body>
+  
+  <h1>Here is my Latest Tweet</h1>
   
   <!-- Tweet will show up here -->
   <div id="latest_tweet"></div>
@@ -16,14 +23,6 @@
   // Example of outputting the contents of the plugin to a DOM node.
   $("#latest_tweet").latestTweet({
     widget_id: "345612825047228417"
-  });
-  
-  // Example of simply getting the data back as an object.
-  $("body").latestTweet({
-    widget_id: "345612825047228417",
-    callback: function(data) {
-      console.log(data);
-    }
   });
   </script>
 </body>
