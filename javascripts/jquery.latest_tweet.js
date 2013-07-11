@@ -1,5 +1,4 @@
-(function ( $, window, document, undefined ) {
-
+(function ( $ ) {
     var pluginName = "latestTweet",
         defaults = {
             propertyName: "value"
@@ -15,7 +14,6 @@
 
         this.init();
     }
-
     Plugin.prototype = {
         init: function() {
           this.createWidgetAndPrintToDom();
@@ -66,4 +64,4 @@
         });
     };
 
-})( jQuery, window, document );
+})( jQuery );
